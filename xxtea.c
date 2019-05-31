@@ -176,15 +176,21 @@ static int encrypt( lua_State *L)
 
 	return 1;
 }
-static const struct luaL_reg xxtea[] = {
+/*static const struct luaL_reg xxtea[] = {
 
 	{"encrypt", encrypt},
 	{"decrypt", decrypt},
 	{NULL, NULL}
-};
+};*/
 
 /* register library */
 LUALIB_API int luaopen_xxtea( lua_State *L ){
-	luaL_openlib( L, "xxtea", xxtea, 0 );
+	lua_Reg l[] = {
+		{"encrypt", encrypt},
+		{"decrypt", decrypt},
+		{NULL, NULL},
+	};
+	luaL_newlib(L,l);
+	//luaL_openlib( L, "xxtea", xxtea, 0 );
 	return 1;
 }
