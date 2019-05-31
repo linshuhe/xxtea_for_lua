@@ -185,7 +185,7 @@ static int encrypt( lua_State *L)
 
 /* register library */
 LUALIB_API int luaopen_xxtea( lua_State *L ){
-	lua_Reg l[] = {
+	luaL_Reg l[] = {
 		{"encrypt", encrypt},
 		{"decrypt", decrypt},
 		{NULL, NULL},
