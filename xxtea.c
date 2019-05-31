@@ -1,5 +1,5 @@
-#include "/usr/local/include/luajit-2.0/lua.h"
-#include "/usr/local/include/luajit-2.0/lauxlib.h"
+#include "lua.h"
+#include "lauxlib.h"
 #include "./xxtea.h"
 #include <memory.h>
 #include <stdlib.h>
