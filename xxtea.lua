@@ -1,11 +1,13 @@
-local xxtea = require("xxtea")
+local c = require "xxtea.c"
+local xxtea = {}
 
-local key = ""
 
-function encrypte(data)
-	return xxtea.encrypte(data, key)
+function xxtea.encrypt(data, key)
+	return c.encrypt(data, key)
 end
 
-function decrypte(data)
-	return xxtea.decrypte(data, key)
+function xxtea.decrypt(data, key)
+	return c.decrypt(data, key)
 end
+
+return xxtea
